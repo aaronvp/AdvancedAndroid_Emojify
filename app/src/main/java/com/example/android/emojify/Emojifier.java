@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
+import com.google.android.gms.vision.face.Landmark;
 
 public class Emojifier {
 
@@ -26,6 +27,15 @@ public class Emojifier {
         } else {
             Log.i("Faces", "Faces detected = " + faces.size());
         }
+
+        for (int i = 0; i < faces.size(); ++i) {
+            Face face = faces.valueAt(i);
+            for (Landmark landmark : face.getLandmarks()) {
+
+            }
+        }
+
+        detector.release();
 
     }
 
